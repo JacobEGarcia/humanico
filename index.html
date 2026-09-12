@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Humanico - Proof of Humanity</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f2ecdf;--ink:#241f18;--muted:#7a6f5c;--accent:#b4502e;--green:#4a6b4a;--line:#d8cfc0}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,sans-serif}
+h1,h2,h3{font-family:Fraunces,serif}
+.wrap{max-width:1020px;margin:0 auto;padding:0 24px}
+header{padding:22px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline}
+.logo{font-family:Fraunces,serif;font-size:24px;font-weight:600}
+.logo em{font-style:normal;color:var(--accent)}
+nav a{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--muted);text-decoration:none;margin-left:18px}
+nav a:hover{color:var(--ink)}
+.hero{padding:90px 0 70px;text-align:center}
+.hero .k{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;color:var(--accent);margin-bottom:18px}
+.hero h1{font-size:54px;font-weight:600;line-height:1.1;margin:0 auto 20px;max-width:720px}
+.hero h1 .wob{display:inline-block;transform:rotate(-1.5deg);color:var(--accent);font-style:italic}
+.hero p{color:var(--muted);max-width:520px;margin:0 auto;font-size:16px;line-height:1.7}
+.hero .cta{margin-top:30px;display:inline-block;background:var(--ink);color:var(--paper);padding:13px 30px;border-radius:4px;text-decoration:none;font-size:14px}
+section{padding:60px 0;border-top:1px solid var(--line)}
+.shead{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--muted);margin-bottom:8px}
+h2.st{font-size:36px;font-weight:600;margin:0 0 8px}
+.snote{color:var(--muted);font-size:14px;max-width:560px;line-height:1.7;margin-bottom:34px}
+.tests{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.test{border:1px solid var(--line);border-radius:8px;padding:20px;background:#faf6ec}
+.test h3{margin:0 0 4px;font-size:19px}
+.test .hint{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:12px}
+.test canvas{width:100%;height:150px;background:var(--paper);border:1px dashed var(--line);border-radius:6px;cursor:crosshair;touch-action:none}
+.tbtn{background:var(--ink);color:var(--paper);border:none;padding:9px 18px;border-radius:4px;cursor:pointer;font-size:12px;font-family:'IBM Plex Mono',monospace}
+.tbtn.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}
+.res{font-family:'IBM Plex Mono',monospace;font-size:11px;margin-top:10px;min-height:16px}
+.res.ok{color:var(--green)}.res.bad{color:var(--accent)}
+#stroopWord{font-family:Fraunces,serif;font-size:44px;font-weight:600;text-align:center;padding:26px 0;letter-spacing:.04em}
+.scolors{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.scolors button{padding:8px 14px;border-radius:4px;border:1px solid var(--line);cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11px;background:var(--paper)}
+#scoreCard{margin-top:26px;border:2px solid var(--ink);border-radius:10px;padding:26px;text-align:center;background:#faf6ec;display:none}
+#scoreNum{font-family:Fraunces,serif;font-size:64px;font-weight:600;color:var(--green)}
+#scoreVerdict{font-family:Fraunces,serif;font-style:italic;font-size:18px;color:var(--muted);margin-top:4px}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.exh{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#faf6ec}
+.exh .art{height:130px;display:flex;align-items:center;justify-content:center;font-family:Fraunces,serif;font-size:52px;color:var(--paper)}
+.exh .body{padding:16px}
+.exh h4{font-family:Fraunces,serif;margin:0 0 6px;font-size:16px}
+.exh p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.6}
+.exh .cat{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.18em;color:var(--accent)}
+footer{padding:40px 0;text-align:center;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:10px;border-top:1px solid var(--line)}
+@media(max-width:800px){.tests,.mgrid{grid-template-columns:1fr}.hero h1{font-size:36px}}
+</style></head><body>
+<header class="wrap"><div class="logo">HUMANI<em>CO</em></div>
+<nav><a href="#tests">the tests</a><a href="#museum">the museum</a><a href="#tests">get certified</a></nav></header>
+<div class="wrap">
+<div class="hero">
+<div class="k">PROOF OF HUMANITY · SINCE BEFORE IT NEEDED PROVING</div>
+<h1>Certification for the <span class="wob">beautifully</span> imperfect.</h1>
+<p>Machines draw perfect circles. You don't. That's the whole trick. Humanico certifies humans the old way - by measuring the wobble.</p>
+<a class="cta" href="#tests">Take the tests</a>
+</div>
+</div>
+<section id="tests"><div class="wrap">
+<div class="shead">SECTION ONE</div><h2 class="st">The Examination Room</h2>
+<p class="snote">Six behavioral signals. No accounts, no uploads - everything runs in your browser and forgets you the moment you leave. Perfect scores are suspicious. Human scores are in the middle.</p>
+<div class="tests">
+<div class="test"><h3>1 · The Circle</h3><div class="hint">draw a circle. a real one, not a good one.</div>
+<canvas id="cvCircle"></canvas>
+<div style="margin-top:10px"><button class="tbtn ghost" onclick="clearCv('cvCircle')">clear</button></div>
+<div class="res" id="rCircle"></div></div>
+<div class="test"><h3>2 · The Straight Line</h3><div class="hint">draw one straight line across. your hand will lie a little.</div>
+<canvas id="cvLine"></canvas>
+<div style="margin-top:10px"><button class="tbtn ghost" onclick="clearCv('cvLine')">clear</button></div>
+<div class="res" id="rLine"></div></div>
+<div class="test"><h3>3 · The Beat</h3><div class="hint">tap with the metronome for 8 beats. space or click.</div>
+<div style="text-align:center;padding:14px 0"><div id="beatDot" style="width:44px;height:44px;border-radius:50%;background:var(--line);margin:0 auto 12px"></div>
+<button class="tbtn" id="beatBtn" onclick="beatTap()">start</button></div>
+<div class="res" id="rBeat"></div></div>
+<div class="test"><h3>4 · The Interference</h3><div class="hint">click the INK color, not the word. five rounds.</div>
+<div id="stroopWord">READY</div>
+<div class="scolors" id="stroopBtns"></div>
+<div class="res" id="rStroop"></div></div>
+</div>
+<div id="scoreCard"><div class="shead">HUMANICO CERTIFICATION</div>
+<div id="scoreNum">--</div><div id="scoreVerdict"></div>
+<div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);margin-top:12px" id="scoreDetail"></div></div>
+</div></section>
+<section id="museum"><div class="wrap">
+<div class="shead">SECTION TWO</div><h2 class="st">The Museum of Humanity</h2>
+<p class="snote">A small permanent collection of things no machine ever made by accident. Admission free. Touch nothing. Feel everything.</p>
+<div class="mgrid" id="mgrid"></div>
+</div></section>
+<footer>HUMANICO · certification for the warm-blooded · nothing is stored, not even your wobble</footer>
+<script>
+// ---------- shared draw-canvas rig ----------
+function rigDraw(id,onDone){const cv=document.getElementById(id),ctx=cv.getContext('2d');
+ function size(){cv.width=cv.offsetWidth;cv.height=150;}size();addEventListener('resize',size);
+ ctx.strokeStyle='#241f18';ctx.lineWidth=2;ctx.lineCap='round';
+ let pts=[],down=false;
+ const pos=e=>{const r=cv.getBoundingClientRect();const p=e.touches?e.touches[0]:e;return{x:p.clientX-r.left,y:p.clientY-r.top};};
+ const start=e=>{down=true;pts=[pos(e)];ctx.beginPath();ctx.moveTo(pts[0].x,pts[0].y);e.preventDefault();};
+ const move=e=>{if(!down)return;const p=pos(e);pts.push(p);ctx.lineTo(p.x,p.y);ctx.stroke();e.preventDefault();};
+ const end=()=>{if(!down)return;down=false;if(pts.length>8)onDone(pts);pts=[];};
+ cv.onmousedown=start;cv.onmousemove=move;cv.onmouseup=end;cv.onmouseleave=end;
+ cv.ontouchstart=start;cv.ontouchmove=move;cv.ontouchend=end;
+ return pts;}
+function clearCv(id){const cv=document.getElementById(id);cv.getContext('2d').clearRect(0,0,cv.width,cv.height);}
+// ---------- test 1: circle ----------
+let scores={};
+function setScore(k,v){scores[k]=v;tryScore();}
+rigDraw('cvCircle',pts=>{
+ const cx=pts.reduce((a,p)=>a+p.x,0)/pts.length,cy=pts.reduce((a,p)=>a+p.y,0)/pts.length;
+ const rs=pts.map(p=>Math.hypot(p.x-cx,p.y-cy));
+ const mean=rs.reduce((a,b)=>a+b)/rs.length;
+ const variance=rs.reduce((a,r)=>a+(r-mean)*(r-mean),0)/rs.length;
+ const irr=Math.sqrt(variance)/mean;
+ const el=document.getElementById('rCircle');
+ if(irr<0.02){el.className='res bad';el.textContent='irregularity '+(irr*100).toFixed(1)+'% - suspiciously perfect. a plotter drew this.';setScore('circle',0);}
+ else if(irr<0.35){el.className='res ok';el.textContent='irregularity '+(irr*100).toFixed(1)+'% - gloriously wobbly. human.';setScore('circle',1);}
+ else{el.className='res bad';el.textContent='irregularity '+(irr*100).toFixed(1)+'% - that was a potato. draw a circle.';setScore('circle',0);}});
+// ---------- test 2: straight line ----------
+rigDraw('cvLine',pts=>{
+ if(pts.length<10)return;
+ const x0=pts[0].x,x1=pts[pts.length-1].x,y0=pts[0].y,y1=pts[pts.length-1].y;
+ const len=Math.hypot(x1-x0,y1-y0);if(len<80)return;
+ let drift=0;pts.forEach(p=>{const t=((p.x-x0)*(x1-x0)+(p.y-y0)*(y1-y0))/(len*len);
+  const px=x0+t*(x1-x0),py=y0+t*(y1-y0);drift+=Math.hypot(p.x-px,p.y-py);});
+ drift/=pts.length;
+ const el=document.getElementById('rLine');
+ if(drift<0.4){el.className='res bad';el.textContent='drift '+drift.toFixed(2)+'px - laser-straight. machines may not apply.';setScore('line',0);}
+ else if(drift<6){el.className='res ok';el.textContent='drift '+drift.toFixed(2)+'px - a hand with a pulse drew this.';setScore('line',1);}
+ else{el.className='res bad';el.textContent='drift '+drift.toFixed(2)+'px - that line has opinions. one straight line, please.';setScore('line',0);}});
+// ---------- test 3: beat ----------
+let beatOn=false,beatTaps=[],beatInt=null,beatStart=0;
+const BPM=96,INTERVAL=60000/BPM;
+function beatTap(){
+ const btn=document.getElementById('beatBtn'),dot=document.getElementById('beatDot');
+ if(!beatOn){beatOn=true;beatTaps=[];beatStart=performance.now();
+  btn.textContent='tap...';document.getElementById('rBeat').textContent='';
+  let n=0;beatInt=setInterval(()=>{dot.style.background='#b4502e';
+   setTimeout(()=>dot.style.background='#d8cfc0',120);
+   if(++n>=8){setTimeout(finishBeat,INTERVAL*1.4);clearInterval(beatInt);}},INTERVAL);
+  return;}
+ beatTaps.push(performance.now()-beatStart);}
+function finishBeat(){beatOn=false;document.getElementById('beatBtn').textContent='start';
+ const el=document.getElementById('rBeat');
+ if(beatTaps.length<4){el.className='res bad';el.textContent='too few taps - the beat waited for you.';return;}
+ const errs=beatTaps.map(t=>{const nearest=Math.round(t/INTERVAL)*INTERVAL;return t-nearest;});
+ const mean=errs.reduce((a,b)=>a+b)/errs.length;
+ const sd=Math.sqrt(errs.reduce((a,e)=>a+(e-mean)*(e-mean),0)/errs.length);
+ if(sd<8){el.className='res bad';el.textContent='jitter '+sd.toFixed(0)+'ms - atomic clock detected.';setScore('beat',0);}
+ else if(sd<95){el.className='res ok';el.textContent='jitter '+sd.toFixed(0)+'ms - rhythmically human. the drummer nods.';setScore('beat',1);}
+ else{el.className='res bad';el.textContent='jitter '+sd.toFixed(0)+'ms - that was free jazz. try the beat.';setScore('beat',0);}}
+addEventListener('keydown',e=>{if(e.code==='Space'&&beatOn){e.preventDefault();beatTap();}});
+// ---------- test 4: stroop ----------
+const COLORS={RED:'#b4502e',BLUE:'#3a5a7a',GREEN:'#4a6b4a',OCHRE:'#b4862e'};
+let stroopRound=0,stroopTimes=[],stroopInk='',stroopStart=0;
+const sBtns=document.getElementById('stroopBtns');
+Object.keys(COLORS).forEach(name=>{const b=document.createElement('button');b.textContent=name;
+ b.onclick=()=>stroopPick(name);sBtns.appendChild(b);});
+function stroopGo(){if(stroopRound>=5){const avg=stroopTimes.reduce((a,b)=>a+b)/stroopTimes.length;
+  const el=document.getElementById('rStroop');
+  if(avg<280){el.className='res bad';el.textContent='avg '+avg.toFixed(0)+'ms - no hesitation at all. silicon reflexes.';setScore('stroop',0);}
+  else{el.className='res ok';el.textContent='avg '+avg.toFixed(0)+'ms across 5 rounds - your two brain systems fought. human.';setScore('stroop',1);}
+  document.getElementById('stroopWord').textContent='DONE';document.getElementById('stroopWord').style.color='#241f18';return;}
+ const words=Object.keys(COLORS);const w=words[Math.floor(Math.random()*4)];
+ let ink=words[Math.floor(Math.random()*4)];if(ink===w)ink=words[(words.indexOf(w)+1)%4];
+ stroopInk=ink;stroopStart=performance.now();
+ const el=document.getElementById('stroopWord');el.textContent=w;el.style.color=COLORS[ink];
+ document.getElementById('rStroop').textContent='round '+(stroopRound+1)+' of 5';}
+function stroopPick(name){if(!stroopInk)return;
+ const el=document.getElementById('rStroop');
+ if(name!==stroopInk){el.className='res bad';el.textContent='the INK, not the word. starting over.';stroopRound=0;stroopTimes=[];stroopInk='';stroopGo();return;}
+ stroopTimes.push(performance.now()-stroopStart);stroopRound++;stroopInk='';stroopGo();}
+document.getElementById('stroopWord').onclick=()=>{if(stroopRound===0&&!stroopInk)stroopGo();};
+document.getElementById('stroopWord').style.cursor='pointer';
+// ---------- score ----------
+function tryScore(){const k=Object.keys(scores);if(k.length<4)return;
+ const n=k.reduce((a,key)=>a+scores[key],0);
+ const pct=[12,45,72,93,99][n];
+ document.getElementById('scoreCard').style.display='block';
+ document.getElementById('scoreNum').textContent=pct+'%';
+ document.getElementById('scoreVerdict').textContent=n>=3?'certified human. welcome to the species.':'inconclusive. the wobble is either missing or excessive.';
+ document.getElementById('scoreDetail').textContent=k.map(key=>key+': '+(scores[key]?'HUMAN':'SUSPECT')).join(' · ');}
+// ---------- museum ----------
+const EXH=[
+ ['The Unsent Letter','#8a5a3a','CORRESPONDENCE','Written at 1am, reread at 2am, never mailed. The draft folder is the most honest room in the house.'],
+ ['The Crooked Shelf','#4a6b4a','WOODWORK','Built by a grandfather who measured twice and cut anyway. It has held forty years of paperbacks and one apology.'],
+ ['The Wrong Note','#3a5a7a','MUSIC','Bar 41 of the school recital. Everyone heard it. It is why we remember the afternoon at all.'],
+ ['The Margin Doodle','#b4862e','FINE ART','Drawn during a phone call that should have been an email. Art history will never know. That is fine.'],
+ ['The Improvised Recipe','#b4502e','CUISINE','No measurements, one substitution, a prayer. Cannot be replicated. Has been requested at every gathering since.'],
+ ['The Handshake Deal','#6b5a7a','COMMERCE','Two witnesses: a diner napkin and a waitress named Dot. Enforced by nothing but a reputation. Still binding.']];
+document.getElementById('mgrid').innerHTML=EXH.map(e=>
+ '<div class="exh"><div class="art" style="background:'+e[1]+'">'+e[0].split(' ').map(w=>w[0]).join('').slice(0,3)+'</div>'+
+ '<div class="body"><div class="cat">'+e[2]+'</div><h4>'+e[0]+'</h4><p>'+e[3]+'</p></div></div>').join('');
+// ---------- qa ----------
+if(location.search.includes('qa=1')){
+ scores={circle:1,line:1,beat:1,stroop:0};tryScore();
+ document.getElementById('stroopWord').textContent='GREEN';document.getElementById('stroopWord').style.color=COLORS.RED;
+ document.getElementById('rStroop').textContent='round 3 of 5';
+ // fake a circle stroke
+ const cv=document.getElementById('cvCircle'),ctx=cv.getContext('2d');cv.width=cv.offsetWidth;cv.height=150;
+ ctx.strokeStyle='#241f18';ctx.lineWidth=2;ctx.beginPath();
+ for(let a=0;a<=Math.PI*2+.1;a+=.1){const r=42+Math.sin(a*3)*6+Math.cos(a*5)*3;
+  const x=cv.width/2+Math.cos(a)*r*1.4,y=75+Math.sin(a)*r;a?ctx.lineTo(x,y):ctx.moveTo(x,y);}
+ ctx.stroke();
+ document.getElementById('rCircle').className='res ok';document.getElementById('rCircle').textContent='irregularity 14.2% - gloriously wobbly. human.';
+ setTimeout(()=>{document.getElementById('tests').scrollIntoView();},50);}
+</script></body></html>
